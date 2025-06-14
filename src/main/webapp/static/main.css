@@ -1,0 +1,41 @@
+table {
+    border-collapse: separate;
+    border-spacing: 10px; /* расстояние между ячейками */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    empty-cells: show;
+    cursor: pointer;
+
+    /* Плавный переход фона */
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Подсветка при наведении */
+td:hover {
+    background-color: #f0f8ff; /* светло-голубой */
+}
+
+/* Эффект клика — фон темнеет и создаётся эффект вдавливания */
+td:active {
+    background-color: #add8e6; /* темнее голубого */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Дополнительные классы для крестика и нолика (если используешь) */
+td.cross {
+    color: #d9534f; /* красный крестик */
+}
+
+td.nought {
+    color: #0275d8; /* синий нолик */
+}

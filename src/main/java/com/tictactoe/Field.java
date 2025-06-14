@@ -52,11 +52,14 @@ public class Field {
         );
 
         for (List<Integer> winPossibility : winPossibilities) {
-            if (field.get(winPossibility.get(0)) == field.get(winPossibility.get(1))
-                && field.get(winPossibility.get(0)) == field.get(winPossibility.get(2))) {
-                return field.get(winPossibility.get(0));
+            Sign first = field.get(winPossibility.get(0));
+            Sign second = field.get(winPossibility.get(1));
+            Sign third = field.get(winPossibility.get(2));
+
+            if (first != Sign.EMPTY && first == second && first == third) {
+                return first;  // возвращаем CROSS или NOUGHT
             }
         }
-        return Sign.EMPTY;
+        return Sign.EMPTY; // Победителя нет
     }
 }
